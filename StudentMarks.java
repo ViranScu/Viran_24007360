@@ -12,7 +12,7 @@ public class StudentMarks
     // instance variables - replace the example below with your own
     private String unitName;
     private double studentMark;
-    private static final int noOfStudents=5;
+    private static final int noOfStudents=25;
     private ArrayList<Double> studentMarksArray=new ArrayList<>();
 
     /**
