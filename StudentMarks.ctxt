@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=StudentMarks
+comment0.text=\n\ Write\ a\ description\ of\ class\ StudentMarks\ here.\n\n\ @author\ (Viran\ Pravinda)\n\ @version\ (2022/03/14)\n
+comment1.params=
+comment1.target=StudentMarks()
+comment1.text=\n\ Constructor\ for\ objects\ of\ class\ StudentMarks\n
+comment2.params=
+comment2.target=void\ getInputs()
+comment3.params=
+comment3.target=void\ printDetails()
+comment4.params=args
+comment4.target=void\ main(java.lang.String[])
+numComments=5
