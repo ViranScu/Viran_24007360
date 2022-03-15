@@ -9,17 +9,18 @@ import java.util.ArrayList;
  */
 public class StudentMarks
 {
-    // instance variables - replace the example below with your own
+    // instance variables
     private String unitName;
     private double studentMark;
     private static final int noOfStudents=25;
-    private ArrayList<Double> studentMarksArray=new ArrayList<>();
+    private double[] studentMarksArray;
 
     /**
      * Constructor for objects of class StudentMarks
      */
     public StudentMarks()
     {
+        studentMarksArray=new double[25];
         getInputs();
         printDetails();
     }
@@ -29,23 +30,21 @@ public class StudentMarks
         System.out.println("Please, enter unit name: ");
         unitName=(new Scanner(System.in)).nextLine();
         
-        int i=0;
-        while(i<noOfStudents) {
+        for(int i=0; i<noOfStudents; i++) {
             boolean correctMark=false;
             
-            do {
+            while(!correctMark) {
                 System.out.println("Please, enter student's mark: ");
                 studentMark=(new Scanner(System.in)).nextDouble();
-                
+            
+                //Checking whether the entered mark is between 0 and 100
                 if(studentMark>=0 && studentMark<=100) {
                     correctMark=true;
-                    studentMarksArray.add(studentMark);
-                    i++;
+                    studentMarksArray[i]=studentMark;
                 } else {
                     System.out.println("Please, enter a value between 0 and 100!!");
                 }
-                
-            } while(!correctMark);
+            }
         }
     }
     
@@ -56,8 +55,8 @@ public class StudentMarks
         System.out.println("--------------------------");
         System.out.println("Unit marks:");
         
-        for(int j=0; j<studentMarksArray.size(); j++) {
-            System.out.println(studentMarksArray.get(j));
+        for(int j=0; j<studentMarksArray.length; j++) {
+            System.out.println(studentMarksArray[j]);
         }
         
         System.out.println("--------------------------");
