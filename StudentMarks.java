@@ -12,17 +12,20 @@ public class StudentMarks
     // instance variables
     private String unitName;
     private double studentMark;
-    private static final int noOfStudents=25;
+    private static final int noOfStudents=5;
     private double[] studentMarksArray;
+    private double minMark;
+    private double maxMark;
 
     /**
      * Constructor for objects of class StudentMarks
      */
     public StudentMarks()
     {
-        studentMarksArray=new double[25];
+        studentMarksArray=new double[5];
         getInputs();
         printDetails();
+        findMaxMark();
     }
 
     // get inputs from the user
@@ -59,6 +62,21 @@ public class StudentMarks
             System.out.println(studentMarksArray[j]);
         }
         
+        System.out.println("--------------------------");
+    }
+    
+    //find max student mark
+    public void findMaxMark() {
+        double maxMark=studentMarksArray[0];
+        
+        int i=1;
+        while(i<studentMarksArray.length) {
+            if(studentMarksArray[i]>maxMark) {
+                maxMark=studentMarksArray[i];
+            }
+            i++;
+        }
+        System.out.println("Maximum student mark: "+maxMark);
         System.out.println("--------------------------");
     }
     
