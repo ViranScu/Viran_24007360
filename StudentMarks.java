@@ -27,6 +27,7 @@ public class StudentMarks
         printDetails();
         findMaxMark();
         findMinMark();
+        findMeanVal();
     }
 
     // get inputs from the user
@@ -93,6 +94,18 @@ public class StudentMarks
             j++;
         }
         System.out.println("Lowest student mark: "+minMark);
+        System.out.println("--------------------------");
+    }
+    
+    // finding the mean of the student marks
+    public void findMeanVal() {
+        double sum=0;
+        for(double val: studentMarksArray) {
+            sum=sum+val;
+        }
+        double mean=sum/studentMarksArray.length;
+        
+        System.out.println("Mean value: "+mean);
         System.out.println("--------------------------");
     }
     
