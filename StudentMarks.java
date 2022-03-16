@@ -28,6 +28,7 @@ public class StudentMarks
         findMaxMark();
         findMinMark();
         findMeanVal();
+        findStandardDeviation();
     }
 
     // get inputs from the user
@@ -107,6 +108,25 @@ public class StudentMarks
         
         System.out.println("Mean value: "+mean);
         System.out.println("--------------------------");
+    }
+    
+    // finding the standard deviation of the marks
+    public void findStandardDeviation() {
+        double sum=0;
+        double standardDeviation=0;
+        
+        for(double val: studentMarksArray) {
+            sum=sum+val;
+        }
+        double mean=sum/studentMarksArray.length;
+        
+        for(double mark: studentMarksArray) {
+            standardDeviation=standardDeviation+Math.pow(mark-mean, 2);
+        }
+        
+        double stdDevVal=Math.sqrt(standardDeviation/studentMarksArray.length);
+        
+        System.out.println("Standard deviation value "+stdDevVal);
     }
     
     public static void main(String[] args) {
