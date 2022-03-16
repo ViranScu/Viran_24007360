@@ -26,6 +26,7 @@ public class StudentMarks
         getInputs();
         printDetails();
         findMaxMark();
+        findMinMark();
     }
 
     // get inputs from the user
@@ -65,7 +66,7 @@ public class StudentMarks
         System.out.println("--------------------------");
     }
     
-    //find max student mark
+    // finding the highest student mark
     public void findMaxMark() {
         double maxMark=studentMarksArray[0];
         
@@ -76,7 +77,22 @@ public class StudentMarks
             }
             i++;
         }
-        System.out.println("Maximum student mark: "+maxMark);
+        System.out.println("Highest student mark: "+maxMark);
+        System.out.println("--------------------------");
+    }
+    
+    // finding the lowest student mark
+    public void findMinMark() {
+        double minMark=studentMarksArray[0];
+        
+        int j=1;
+        while(j<studentMarksArray.length) {
+            if(studentMarksArray[j]<minMark) {
+                minMark=studentMarksArray[j];
+            }
+            j++;
+        }
+        System.out.println("Lowest student mark: "+minMark);
         System.out.println("--------------------------");
     }
     
