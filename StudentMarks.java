@@ -13,7 +13,7 @@ public class StudentMarks
     private String unitName;
     private double studentMark;
     private static final int noOfStudents=5;
-    private double[] studentMarksArray;
+    private Double[] studentMarksArray;
     private double minMark;
     private double maxMark;
 
@@ -22,7 +22,7 @@ public class StudentMarks
      */
     public StudentMarks()
     {
-        studentMarksArray=new double[5];
+        studentMarksArray=new Double[5];
         getInputs();
         printDetails();
         findMaxMark();
@@ -98,35 +98,38 @@ public class StudentMarks
         System.out.println("--------------------------");
     }
     
-    // finding the mean of the student marks
+    // finding the mean of the students' marks
     public void findMeanVal() {
         double sum=0;
+        double mean=0;
         for(double val: studentMarksArray) {
             sum=sum+val;
         }
-        double mean=sum/studentMarksArray.length;
+        mean=sum/studentMarksArray.length;
         
         System.out.println("Mean value: "+mean);
         System.out.println("--------------------------");
     }
     
-    // finding the standard deviation of the marks
+    // finding the standard deviation of the students' marks
     public void findStandardDeviation() {
         double sum=0;
+        double newSum=0;
         double standardDeviation=0;
+        double mean=0;
         
         for(double val: studentMarksArray) {
             sum=sum+val;
         }
-        double mean=sum/studentMarksArray.length;
+        mean=sum/studentMarksArray.length;
         
         for(double mark: studentMarksArray) {
-            standardDeviation=standardDeviation+Math.pow(mark-mean, 2);
+            newSum=newSum+Math.pow(mark-mean, 2);
         }
         
-        double stdDevVal=Math.sqrt(standardDeviation/studentMarksArray.length);
+        standardDeviation=Math.sqrt(newSum/studentMarksArray.length);
         
-        System.out.println("Standard deviation value "+stdDevVal);
+        System.out.println("Standard deviation value: "+standardDeviation);
     }
     
     public static void main(String[] args) {
