@@ -1,0 +1,59 @@
+F5: finding the highest mark
+
+START FindMaxMark
+	SET MaxMark to studentMarksArray[0]
+	SET i to 1
+		WHILE i < studentMarksArray length
+			IF studentMarksArray[i] > MaxMark THEN
+				SET MaxMark to studentMarksArray[i]
+			ENDIF
+			INCREMENT i
+		ENDWHILE
+		PRINT MaxMark
+END
+
+F5: finding the minimum mark
+
+START FindMinMark
+	SET MinMark to studentMarksArray[0]
+	SET j to 1
+		WHILE j < studentMarksArray length
+			IF studentMarksArray[j] < MinMark THEN
+				SET MinMark to studentMarksArray[j]
+			ENDIF
+			INCREMENT j
+		ENDWHILE
+		PRINT MinMark
+END
+
+F6: finding the mean value
+
+START FindMeanVal
+	SET Sum to 0 
+	SET Mean to 0
+		FOR each val in studentMarksArray
+			Sum = Sum + val
+		ENDFOR
+		Mean = Sum / studentMarksArray length
+		PRINT Mean
+END
+
+F6: finding the Standard Deviation
+
+START FindStandardDeviation
+	SET sum to 0
+	SET newSum to 0
+	SET standardDeviation to 0
+	SET mean to 0
+		FOR each val in studentMarksArray
+			sum = sum + val
+		ENDFOR
+		Mean = sum / studentMarksArray length
+
+		FOR each mark in studentMarksArray
+			newSum = newSum + number mark minus mean raised to the power 2
+		ENDFOR
+		standardDeviation = square root of newSum divided by studentMarksArray length
+		PRINT standardDeviation
+END
+
