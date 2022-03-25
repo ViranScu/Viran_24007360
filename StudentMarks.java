@@ -12,7 +12,7 @@ public class StudentMarks
     // instance variables
     private String unitName;
     private double studentMark;
-    private static final int noOfStudents=25;
+    private static final int noOfStudents=5;
     private Double[] studentMarksArray;
     private double minMark;
     private double maxMark;
@@ -22,7 +22,7 @@ public class StudentMarks
      */
     public StudentMarks()
     {
-        studentMarksArray=new Double[25];
+        studentMarksArray=new Double[5];
         getInputs();
         printDetails();
         findMaxMark();
@@ -40,15 +40,20 @@ public class StudentMarks
             boolean correctMark=false;
             
             while(!correctMark) {
-                System.out.println("Please, enter student's mark: ");
-                studentMark=(new Scanner(System.in)).nextDouble();
-            
-                //Checking whether the entered mark is between 0 and 100
-                if(studentMark>=0 && studentMark<=100) {
-                    correctMark=true;
-                    studentMarksArray[i]=studentMark;
-                } else {
+                try {
+                    System.out.println("Please, enter student's mark: ");
+                    studentMark=(new Scanner(System.in)).nextDouble();
+                
+                    //Checking whether the entered mark is between 0 and 100
+                    if(studentMark>=0 && studentMark<=100) {
+                        correctMark=true;
+                        studentMarksArray[i]=studentMark;
+                    } else {
+                        System.out.println("Please, enter a value between 0 and 100!!");
+                    }
+                } catch(Exception ex) { // Exception handles when user enters characters
                     System.out.println("Please, enter a value between 0 and 100!!");
+                    ex.printStackTrace();
                 }
             }
         }
