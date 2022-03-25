@@ -12,7 +12,7 @@ public class StudentMarks
     // instance variables
     private String unitName;
     private double studentMark;
-    private static final int noOfStudents=5;
+    private static final int noOfStudents=25;
     private Double[] studentMarksArray;
     private double minMark;
     private double maxMark;
@@ -22,7 +22,7 @@ public class StudentMarks
      */
     public StudentMarks()
     {
-        studentMarksArray=new Double[5];
+        studentMarksArray=new Double[25];
         getInputs();
         printDetails();
         findMaxMark();
